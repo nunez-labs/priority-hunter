@@ -4,6 +4,7 @@ import "./globals.css";
 import { Geist, Source_Serif_4, JetBrains_Mono } from "next/font/google"
 import { cn } from "@ph/ui"
 
+import {DefaultLayout} from "@/components/layouts/DefaultLayout"
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -32,8 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("antialiased", geist.variable, sourceSerif4.variable, jetBrainsMono.variable)}>
       <body className="">
-        {children}
-      </body>
+        <DefaultLayout>
+        {children}</DefaultLayout>      </body>
     </html>
   );
 }
