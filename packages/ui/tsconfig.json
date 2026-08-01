@@ -3,12 +3,10 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution":"bundler",
-    "baseUrl": ".",
     "strictNullChecks": true,
-    "paths":{
-      "@/*":["./src/*"],
-    },
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"],
 }

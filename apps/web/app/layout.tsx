@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
-import { Geist, Source_Serif_4, JetBrains_Mono } from "next/font/google"
-import { cn } from "@ph/ui"
+import { cn } from "@ph/ui";
+import { Geist, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { MainLayout } from "@/components/layouts/MainLayout";
+import { Providers } from "@/components/providers";
 
-import {DefaultLayout} from "@/components/layouts/DefaultLayout"
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -14,11 +15,37 @@ import {DefaultLayout} from "@/components/layouts/DefaultLayout"
 //   variable: "--font-geist-mono",
 // });
 
-const geist = Geist({ subsets: ['cyrillic', 'latin', 'latin-ext'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], variable: '--font-geist' });
+const geist = Geist({
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-geist",
+});
 
-const sourceSerif4 = Source_Serif_4({ subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'greek', 'vietnamese'], weight: ['200', '300', '400', '500', '600', '700', '800', '900'], variable: '--font-source-serif-4' });
+const sourceSerif4 = Source_Serif_4({
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+  ],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-source-serif-4",
+});
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'greek', 'vietnamese'], weight: ['100', '200', '300', '400', '500', '600', '700', '800'], variable: '--font-jetbrains-mono' });
+const jetBrainsMono = JetBrains_Mono({
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+  ],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,10 +58,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("antialiased", geist.variable, sourceSerif4.variable, jetBrainsMono.variable)}>
+    <html
+      lang="en"
+      className={cn(
+        "antialiased",
+        geist.variable,
+        sourceSerif4.variable,
+        jetBrainsMono.variable,
+      )}
+    >
       <body className="">
-        <DefaultLayout>
-        {children}</DefaultLayout>      </body>
+        <Providers>
+          <MainLayout>{children}</MainLayout>
+        </Providers>
+      </body>
     </html>
   );
 }

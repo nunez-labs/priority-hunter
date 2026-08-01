@@ -29,6 +29,15 @@ for (const file of project.getSourceFiles()) {
 
 			imp.setModuleSpecifier(relative);
 		}
+		if (moduleSpecifier.startsWith("@/hooks/")) {
+			const name = moduleSpecifier.replace("@/hooks/", "");
+
+			const relative =
+				file.getRelativePathAsModuleSpecifierTo(
+					path.resolve("src/hooks", name),
+				);
+			imp.setModuleSpecifier(relative);
+		}
 	}
 }
 
