@@ -1,5 +1,4 @@
-import { SidebarProvider } from "@ph/ui";
-import { LayoutDashboard, LucideIcon } from "@ph/ui/Icons";
+import { LayoutDashboard, LucideIcon, SidebarProvider } from "@ph/ui/client";
 
 type Item = {
 	to: string;

@@ -1,5 +1,5 @@
+import { Button } from "@ph/ui/client";
 import Image, { type ImageProps } from "next/image";
-import { Button } from "@ph/ui";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -10,7 +10,7 @@ const ThemeImage = (props: Props) => {
   const { srcLight, srcDark, ...rest } = props;
 
   return (
-<>
+    <>
       <Image {...rest} src={srcLight} className="imgLight" />
       <Image {...rest} src={srcDark} className="imgDark" />
     </>
@@ -63,24 +63,24 @@ export default function Home() {
           </a>
         </div>
         <Button id="web" variant="default" size="default">
-default
+          default
         </Button>
-         <Button id="web1" variant="secondary" size="default">
-     secondary 
+        <Button id="web1" variant="secondary" size="default">
+          secondary
         </Button>
-<Button id="web2" variant="destructive" size="default">
+        <Button id="web2" variant="destructive" size="default">
           destructive
         </Button>
-<Button id="web3" variant="outline" size="default">
-         outline 
+        <Button id="web3" variant="outline" size="default">
+          outline
         </Button>
- <Button id="web4" variant="ghost" size="default">
-        ghost
+        <Button id="web4" variant="ghost" size="default">
+          ghost
         </Button>
-  <Button id="web4" variant="link" size="default">
-  link 
+        <Button id="web4" variant="link" size="default">
+          link
         </Button>
-       </main>
+      </main>
       <footer className="">
         <a
           href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

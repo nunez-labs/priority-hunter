@@ -14,9 +14,9 @@
       "default": "./dist/index.mjs"
     },
     "./styles.css": "./src/styles/globals.css",
-    "./Icons": {
-      "types": "./dist/components/Icons/icons.d.mts",
-      "default": "./dist/components/Icons/icons.mjs"
+    "./client": {
+      "types": "./dist/client.d.mts",
+      "default": "./dist/client.mjs"
     }
   },
   "scripts": {
